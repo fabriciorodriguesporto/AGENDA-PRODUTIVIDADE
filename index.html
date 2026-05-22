@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="auth-box" id="authBox">
+
+    <h1>🛒 Lista de Compras</h1>
+
+    <div class="tabs">
+      <button onclick="showLogin()">Login</button>
+      <button onclick="showRegister()">Cadastro</button>
+    </div>
+
+    <div id="loginForm">
+
+      <input type="email" id="loginEmail" placeholder="Email">
+
+      <input type="password" id="loginPassword" placeholder="Senha">
+
+      <button onclick="login()">
+        Entrar
+      </button>
+
+    </div>
+
+    <div id="registerForm" style="display:none;">
+
+      <input type="text" id="registerName" placeholder="Nome">
+
+      <input type="email" id="registerEmail" placeholder="Email">
+
+      <input type="password" id="registerPassword" placeholder="Senha">
+
+      <button onclick="register()">
+        Cadastrar
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="dashboard hidden" id="dashboard">
+
+    <div class="topbar">
+
+      <div>
+        <h2 id="welcome"></h2>
+        <p>Gerencie suas compras</p>
+      </div>
+
+      <button class="logout" onclick="logout()">
+        Sair
+      </button>
+
+    </div>
+
+    <div class="form-card">
+
+      <h3>Adicionar Item</h3>
+
+      <div class="form-grid">
+
+        <input type="text"
+        id="itemName"
+        placeholder="Nome do item">
+
+        <input type="number"
+        id="itemPrice"
+        placeholder="Preço">
+
+        <select id="itemPriority">
+
+          <option value="Alta">
+            Alta Necessidade
+          </option>
+
+          <option value="Média">
+            Média Necessidade
+          </option>
+
+          <option value="Baixa">
+            Baixa Necessidade
+          </option>
+
+        </select>
+
+        <button onclick="addItem()">
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="summary">
+
+      <div class="card">
+        <h4>Total de Itens</h4>
+        <span id="totalItems">0</span>
+      </div>
+
+      <div class="card">
+        <h4>Total Selecionado</h4>
+        <span id="selectedTotal">R$ 0</span>
+      </div>
+
+      <div class="card">
+        <h4>Total Geral</h4>
+        <span id="generalTotal">R$ 0</span>
+      </div>
+
+    </div>
+
+    <div class="list-area">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>OK</th>
+            <th>Item</th>
+            <th>Preço</th>
+            <th>Necessidade</th>
+            <th>Ações</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="itemList"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
